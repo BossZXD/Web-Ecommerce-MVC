@@ -1,0 +1,37 @@
+﻿@model List<Category>;
+@{
+    ViewData["Title"] = "Category Page";
+}
+<div class="container">
+        <h1 class="text-center display-4">Welcome Category</h1>
+        <div class="row">
+            <div class="col-6">
+            CategoryList
+            </div>
+        <div class="col-6 text-end">
+            <a asp-asp-controller="Category" asp-action="" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Create Category
+            </a>
+        </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>DisplayOrder</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>@item.DisplayOrder</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>
+
