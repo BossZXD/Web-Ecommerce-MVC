@@ -1,26 +1,35 @@
-﻿@model Category
+﻿@using Web.Models
+@model Category
+<div class="container">
+    <div class="form-container mt-4">
+        <form method="post">
+            <div class="form-header">
+                <h2>สร้างหมวดหมู่ใหม่</h2>
+                <p class="text-muted">กรอกข้อมูลเพื่อสร้างหมวดหมู่ใหม่ในระบบ</p>
+            </div>
 
-<form method="post">
-	<div class="border p-3 mt-4">
-		<div class="row pb-2">
-			<h2 class="text-primary">Create Category</h2>
-			<hr />
-		</div>
-		<div class="mb-3 row p-1">
-			<label class="p-0">Category Name</label>
-			<input type="text" name="Name" class="form-control" />
-		</div>
-		<div class="mb-3 row p-1">
-			<label class="p-0">Display Order</label>
-			<input type="text" name="DisplayOrder" class="form-control" />
-		</div>
-		<div class="row">
-			<div class="col-6">
-				<button type="submit" class="btn btn-primary form-control">Submit</button>
-			</div>
-			<div class="col-6">
-				<a asp-controller="Category" asp-action="Index" class="btn btn-secondary form-control">Back To List</a>
-			</div>
-		</div>
-	</div>
-</form>
+            <div class="form-group">
+                <label for="categoryName" class="form-label">ชื่อหมวดหมู่</label>
+                <input type="text" id="categoryName" name="Name" class="form-control form-control-lg" placeholder="กรุณากรอกชื่อหมวดหมู่" required />
+            </div>
+
+            <div class="form-group">
+                <label for="displayOrder" class="form-label">ลำดับการแสดงผล</label>
+                <input type="number" id="displayOrder" name="DisplayOrder" class="form-control form-control-lg" placeholder="กรุณากรอกลำดับการแสดงผล" required />
+            </div>
+
+            <div class="row btn-row mt-4">
+                <div class="col-md-6 mb-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-check-circle me-2"></i>บันทึกข้อมูล
+                    </button>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <a asp-controller="Category" asp-action="Index" class="btn btn-secondary w-100">
+                        <i class="bi bi-arrow-left me-2"></i>กลับไปยังรายการ
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

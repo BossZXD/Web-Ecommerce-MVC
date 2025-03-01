@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Web_Ecommerce.Data;
-using Web_Ecommerce.Models;
+using Web.DataAccess.Data;
+using Web.Models;
 namespace Web_Ecommerce.Controllers
 {
     public class CategoryController : Controller

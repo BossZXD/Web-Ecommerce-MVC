@@ -1,4 +1,4 @@
-﻿namespace Web_Ecommerce.Models
+﻿namespace Web.Models
 {
     public class Category
     {
