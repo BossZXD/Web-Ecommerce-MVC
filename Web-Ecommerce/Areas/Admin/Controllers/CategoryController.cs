@@ -3,8 +3,9 @@ using Web.DataAccess.Data;
 using Web.DataAccess.Repository.IRepository;
 using Web.DataAccess.Repository;
 using Web.Models;
-namespace Web_Ecommerce.Controllers
+namespace Web_Ecommerce.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -37,9 +38,9 @@ namespace Web_Ecommerce.Controllers
                 return NotFound();
             }
 
-            Category? category = _unitOfWork.Category.Get(u=> u.Id == id);
+            Category? category = _unitOfWork.Category.Get(u => u.Id == id);
 
-            if(category == null)
+            if (category == null)
             {
                 return NotFound();
 
